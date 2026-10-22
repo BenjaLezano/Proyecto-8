@@ -1,0 +1,36 @@
+@use "../utilities/variables" as *;
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .grupo-formulario {
+    margin-bottom: 1.25rem;
+
+    .etiqueta-campo {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $color-text;
+      font-weight: 600;
+    }
+
+    .campo-texto,
+    .area-texto {
+      width: 100%;
+      background-color: $color-card-bg;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: $border-radius;
+      padding: 0.75rem 1rem;
+      color: $color-text;
+
+      &:focus {
+        outline: none;
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  .boton-envio {
+    width: 100%;
+  }
+}

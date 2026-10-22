@@ -1,0 +1,35 @@
+@use "../utilities/variables" as *;
+
+.navbar-trapzone {
+  background-color: $color-bg-dark;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+
+  .logotipo {
+    color: $color-primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  .nav-link {
+    color: $color-text;
+    font-weight: 600;
+
+    &:hover,
+    &.active {
+      color: $color-primary;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  }
+}

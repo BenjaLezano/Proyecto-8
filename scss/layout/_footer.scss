@@ -1,0 +1,15 @@
+@use "../utilities/variables" as *;
+
+.pie-pagina {
+  background-color: $color-card-bg;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+
+  .texto-copyright {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
