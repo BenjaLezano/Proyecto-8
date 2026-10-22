@@ -1,5 +1,5 @@
 /* ===================================================
-   1. RESETEO GLOBAL DEL BOX MODEL: Requisito clave
+   1. RESETEO GLOBAL DEL BOX MODEL
    =================================================== */
 * {
   margin: 0;
@@ -27,7 +27,7 @@
 }
 
 /* ===================================================
-   ESTRUCTURA GENERAL: LAYOUT BASE MOBILE-FIRST 
+   ESTRUCTURA GENERAL
    =================================================== */
 body {
   font-family: var(--fuente-cuerpo);
@@ -41,55 +41,70 @@ body {
 }
 
 /* ===================================================
-   NAVBAR FLEXIBLE
+   SOBREESCRITURA Y PERSONALIZACIÓN DE BOOTSTRAP NAVBAR
    =================================================== */
-.barra-navegacion {
-  background-color: var(--color-superficie);
-  border-bottom: 1px solid var(--color-borde); 
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+.navbar-trapzone {
+  background-color: var(--color-superficie) !important;
+  border-bottom: 1px solid var(--color-borde);
+  padding: 1rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.logotipo {
+.navbar-trapzone .logotipo {
   font-family: var(--fuente-titulos);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-primario);
+  color: var(--color-primario) !important;
   text-decoration: none;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  transition: opacity 0.3s ease;
 }
 
-.lista-navegacion {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem; 
+.navbar-trapzone .logotipo:hover,
+.navbar-trapzone .logotipo:focus {
+  opacity: 0.8;
 }
 
-.enlace-navegacion {
-  color: var(--color-texto-secundario);
-  text-decoration: none;
+.navbar-trapzone .nav-link {
+  color: var(--color-texto-secundario) !important;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.enlace-navegacion:hover,
-.enlace-navegacion.activo {
-  color: var(--color-primario);
+.navbar-trapzone .nav-link:hover,
+.navbar-trapzone .nav-link.active {
+  color: var(--color-primario) !important;
+}
+
+.navbar-trapzone .nav-link:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 4px;
+}
+
+.navbar-trapzone .nav-link:active {
+  transform: scale(0.95);
+}
+
+.navbar-toggler {
+  border-color: var(--color-borde) !important;
+  background-color: var(--color-fondo);
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 240, 255, 0.25);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 240, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* ===================================================
-   CONTENEDOR PRINCIPAL Y SECCIONES 
+   CONTENEDOR PRINCIPAL Y SECCIONES
    =================================================== */
 .contenedor-principal {
   flex: 1;
@@ -119,35 +134,14 @@ body {
 }
 
 /* ===================================================
-   CUADRÍCULA DE TARJETAS (MOBILE-FIRST CON CSS GRID)
+   CONTENEDOR DE TARJETAS Y GRID
    =================================================== */
-.cuadricula-tarjetas,
 .contenedor-tarjetas-flex {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "card1"
-    "card2"
-    "card3";
-  gap: 1.5rem;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;            
 }
 
-.tarjeta-1 {
-  grid-area: card1;
-}
-
-.tarjeta-2 {
-  grid-area: card2;
-}
-
-.tarjeta-3 {
-  grid-area: card3;
-}
-
-/* ===================================================
-   TARJETAS
-   =================================================== */
 .tarjeta {
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
@@ -157,36 +151,56 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.85rem;     
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tarjeta:hover {
   transform: translateY(-4px);
   border-color: var(--color-primario);
+  box-shadow: 0 8px 20px rgba(0, 240, 255, 0.1);
+}
+
+.tarjeta:focus {
+  outline: 2px solid var(--color-primario);
+}
+
+.tarjeta:active {
+  transform: translateY(-1px);
 }
 
 /* ===================================================
-   SECCIÓN CON CSS GRID Y GRID-TEMPLATE-AREAS MAESTRO
+   PERSONALIZACIÓN DEL CAROUSEL DE BOOTSTRAP
    =================================================== */
-.grid-layout-maestro {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: 
-    "hero"
-    "contenido";
-  gap: 2rem;
+.carousel-trapzone {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-superficie);
 }
 
-.area-hero {
-  grid-area: hero;
+.carousel-item img {
+  height: 380px;
+  object-fit: cover;
+  filter: brightness(0.7);
 }
 
-.area-contenido {
-  grid-area: contenido;
+.carousel-caption {
+  background: rgba(10, 10, 12, 0.85);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--color-superficie);
+  border-radius: 50%;
+  padding: 1.2rem;
+  border: 1px solid var(--color-borde);
 }
 
 /* ===================================================
-   TIPOGRAFÍA Y COMPONENTES
+   TIPOGRAFIA Y COMPONENTES
    =================================================== */
 .titulo-principal {
   font-family: var(--fuente-titulos);
@@ -243,13 +257,23 @@ body {
   padding: 0.85rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
-  transition: opacity 0.3s ease;
-  width: 100%; 
+  transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
   text-align: center;
 }
 
 .boton-primario:hover {
-  opacity: 0.85;
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.boton-primario:focus {
+  outline: 2px solid var(--color-secundario);
+  outline-offset: 3px;
+}
+
+.boton-primario:active {
+  transform: scale(0.97);
 }
 
 /* ===================================================
@@ -288,12 +312,19 @@ body {
   color: var(--color-texto-principal);
   font-size: 1rem;
   width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-texto:hover,
+.area-texto:hover {
+  border-color: var(--color-texto-secundario);
 }
 
 .campo-texto:focus,
 .area-texto:focus {
-  outline: 2px solid var(--color-primario);
-  border-color: transparent;
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.2);
 }
 
 .boton-envio {
@@ -319,42 +350,9 @@ body {
 }
 
 /* ===================================================
-   BREAKPOINT TABLET: min-width: 768px (Sugerencia docente)
-   =================================================== */
-@media (min-width: 768px) {
-  .barra-navegacion {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1.25rem 2rem;
-  }
-
-  .lista-navegacion {
-    gap: 1.25rem;
-  }
-
-  .cuadricula-tarjetas,
-  .contenedor-tarjetas-flex {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "card1 card2"
-      "card3 card3";
-    gap: 1.5rem;
-  }
-}
-
-/* ===================================================
-   BREAKPOINT DESKTOP: min-width: 1024px (Requisito Rúbrica)
+   BREAKPOINT DESKTOP: min-width: 1024px
    =================================================== */
 @media (min-width: 1024px) {
-
-  .barra-navegacion {
-    padding: 1.25rem 3rem;
-  }
-
-  .lista-navegacion {
-    gap: 1.75rem;
-  }
-
   .contenedor-principal {
     width: 90%;
     margin: 3rem auto;
@@ -365,10 +363,9 @@ body {
     padding: 2.5rem;
   }
 
-  .cuadricula-tarjetas,
   .contenedor-tarjetas-flex {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "card1 card2 card3";
     gap: 1.75rem;
   }
 
@@ -385,7 +382,7 @@ body {
   }
 
   .boton-primario {
-    width: auto; 
+    width: auto;
   }
 
   .formulario-contacto {
