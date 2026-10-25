@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Librería externa de Animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -34,7 +36,7 @@
   </header>
 
   <main class="contenedor-principal">
-    <section class="seccion-hero">
+    <section class="seccion-hero" data-aos="fade-down">
       <h1 class="titulo-principal">Servicios de Estudio y Difusión</h1>
       <p class="texto-destacado">
         Herramientas, producción musical y difusión digital para artistas que buscan llevar sus beats y voces al estándar comercial.
@@ -42,17 +44,17 @@
     </section>
 
     <section class="seccion-contenido">
-      <h2 class="subtitulo-seccion">Especialidades</h2>
+      <h2 class="subtitulo-seccion" data-aos="fade-right">Especialidades</h2>
       <div class="contenedor-tarjetas-flex">
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="flip-left" data-aos-delay="100">
           <h3 class="titulo-tarjeta">Beatmaking &amp; Pistas Urbanas</h3>
           <p class="texto-cuerpo">Composición de instrumentales estilo trap latino, drill y dembow con bajos 808 diseñados a medida.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="flip-left" data-aos-delay="200">
           <h3 class="titulo-tarjeta">Mezcla y Masterización Vocal</h3>
           <p class="texto-cuerpo">Tratamiento de voces con afinación armónica (Autotune), saturación analógica y espacialidad para hits radiales.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="flip-left" data-aos-delay="300">
           <h3 class="titulo-tarjeta">Booking y Cobertura de Medios</h3>
           <p class="texto-cuerpo">Gestión de giras, entrevistas y difusión de estrenos en plataformas de streaming como Spotify y YouTube.</p>
         </article>
@@ -64,7 +66,14 @@
     <p class="texto-copyright">&copy; 2026 TrapZone Web. Todos los derechos reservados.</p>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script y ejecución de AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>

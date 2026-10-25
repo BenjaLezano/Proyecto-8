@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Librería externa de Animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -34,7 +36,7 @@
   </header>
 
   <main class="contenedor-principal">
-    <section class="seccion-hero">
+    <section class="seccion-hero" data-aos="fade-down">
       <h1 class="titulo-principal">Contacto &amp; Booking</h1>
       <p class="texto-destacado">
         ¿Te interesa proponer un feat, enviar una maqueta o gestionar fechas de shows? Déjanos un mensaje.
@@ -42,8 +44,8 @@
     </section>
 
     <section class="seccion-contenido">
-      <h2 class="subtitulo-seccion">Envía tu Consulta</h2>
-      <form action="#" method="POST" class="formulario-contacto">
+      <h2 class="subtitulo-seccion" data-aos="fade-right">Envía tu Consulta</h2>
+      <form action="#" method="POST" class="formulario-contacto" data-aos="fade-up">
         <div class="grupo-formulario">
           <label for="nombre-contacto" class="etiqueta-campo">Nombre o Productora</label>
           <input type="text" id="nombre-contacto" name="nombre" class="campo-texto" placeholder="Ej. El Combo Records" required>
@@ -73,7 +75,14 @@
     <p class="texto-copyright">&copy; 2026 TrapZone Web. Todos los derechos reservados.</p>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script y ejecución de AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>

@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Librería externa de Animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
@@ -34,8 +36,8 @@
   </header>
 
   <main class="contenedor-principal">
-    <!-- Hero Section -->
-    <section class="seccion-hero">
+    <!-- Hero Section con animación AOS -->
+    <section class="seccion-hero" data-aos="fade-down">
       <span class="etiqueta-destaque">Escena Urbana</span>
       <h1 class="titulo-principal">Lo más escuchado de Argentina y Chile: Cris Mj, Juicy Nise y Fanta Rosario</h1>
       <p class="texto-destacado">
@@ -44,8 +46,7 @@
       <a href="./pages/proyectos.html" class="boton-primario">Escuchar Lanzamientos</a>
     </section>
 
-
-    <section class="seccion-contenido">
+    <section class="seccion-contenido" data-aos="fade-up">
       <h2 class="subtitulo-seccion">Galería del Movimiento</h2>
       <div id="carouselTrapZone" class="carousel slide carousel-trapzone shadow" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -87,21 +88,20 @@
       </div>
     </section>
 
-
     <section class="seccion-contenido">
-      <h2 class="subtitulo-seccion">Pilares del Género</h2>
+      <h2 class="subtitulo-seccion" data-aos="fade-right">Pilares del Género</h2>
       <div class="contenedor-tarjetas-flex">
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="fade-up" data-aos-delay="100">
           <span class="etiqueta-destaque">Chile / Global</span>
           <h3 class="titulo-tarjeta">Cris Mj</h3>
           <p class="texto-cuerpo">Pionero del sonido chileno internacional, rompiendo récords mundiales con flows pegadizos y presencia escénica.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="fade-up" data-aos-delay="200">
           <span class="etiqueta-destaque">Underground</span>
           <h3 class="titulo-tarjeta">Juicy Nise</h3>
           <p class="texto-cuerpo">Líneas afiladas, métricas crudas y una estética sonora cargada de bajos 808 distorsionados que marcan identidad.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="fade-up" data-aos-delay="300">
           <span class="etiqueta-destaque">Rosario Trap</span>
           <h3 class="titulo-tarjeta">Fanta Rosario</h3>
           <p class="texto-cuerpo">Frescura, barras callejeras sin filtro y el pulso directo del barrio aportando contundencia a cada lanzamiento.</p>
@@ -114,7 +114,14 @@
     <p class="texto-copyright">&copy; 2026 TrapZone Web. Todos los derechos reservados.</p>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script y ejecución de AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>

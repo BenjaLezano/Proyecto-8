@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Librería externa de Animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -34,7 +36,7 @@
   </header>
 
   <main class="contenedor-principal">
-    <section class="seccion-hero">
+    <section class="seccion-hero" data-aos="fade-down">
       <span class="etiqueta-destaque">Discografía</span>
       <h1 class="titulo-principal">Catálogo de Tracks y Proyectos</h1>
       <p class="texto-destacado">
@@ -43,19 +45,19 @@
     </section>
 
     <section class="seccion-contenido">
-      <h2 class="subtitulo-seccion">Temas Destacados</h2>
+      <h2 class="subtitulo-seccion" data-aos="fade-right">Temas Destacados</h2>
       <div class="contenedor-tarjetas-flex">
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="fade-up" data-aos-delay="100">
           <span class="etiqueta-destaque">Sencillo Top</span>
           <h3 class="titulo-tarjeta">Una Noche en Medellín (Cris Mj)</h3>
           <p class="texto-cuerpo">El hit que marcó un antes y un después en el reggaetón chileno, acumulando cientos de millones de reproducciones en el mundo.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="fade-up" data-aos-delay="200">
           <span class="etiqueta-destaque">Trap Tape</span>
           <h3 class="titulo-tarjeta">Sesiones Callejeras (Juicy Nise)</h3>
           <p class="texto-cuerpo">Recopilatorio de barras directas y beats pesados que destacan por su sonido oscuro y métricas complejas.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="fade-up" data-aos-delay="300">
           <span class="etiqueta-destaque">Colaboración</span>
           <h3 class="titulo-tarjeta">Rosario Conexión (Fanta Rosario)</h3>
           <p class="texto-cuerpo">Un tema que une baterías duras con rimas explícitas, demostrando el alcance de su propuesta en el circuito independiente.</p>
@@ -68,7 +70,14 @@
     <p class="texto-copyright">&copy; 2026 TrapZone Web. Todos los derechos reservados.</p>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script y ejecución de AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>

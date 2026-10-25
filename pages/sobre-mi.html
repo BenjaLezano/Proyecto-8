@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Librería externa de Animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -32,7 +34,7 @@
   </header>
 
   <main class="contenedor-principal">
-    <section class="seccion-hero">
+    <section class="seccion-hero" data-aos="fade-down">
       <h1 class="titulo-principal">Perfiles de los Exponentes</h1>
       <p class="texto-destacado">
         Conoce el estilo, orígenes y la marca sonora que Cris Mj, Juicy Nise y Fanta Rosario están imponiendo en la cultura urbana.
@@ -40,19 +42,19 @@
     </section>
 
     <section class="seccion-contenido">
-      <h2 class="subtitulo-seccion">Trayectoria y Estilo</h2>
+      <h2 class="subtitulo-seccion" data-aos="fade-right">Trayectoria y Estilo</h2>
       <div class="contenedor-tarjetas-flex">
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="zoom-in" data-aos-delay="100">
           <span class="etiqueta-destaque">La Serena / Global</span>
           <h3 class="titulo-tarjeta">Cris Mj</h3>
           <p class="texto-cuerpo">Conocido como "El Más Que Suena", consolidó el estrellato global con su combinación de reggaetón pesado, trap melódico y autotune quirúrgico.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="zoom-in" data-aos-delay="200">
           <span class="etiqueta-destaque">Underground Flow</span>
           <h3 class="titulo-tarjeta">Juicy Nise</h3>
           <p class="texto-cuerpo">Referente de barras pesadas y cadencia pausada, trayendo un sonido crudo influenciado por el hip hop underground y 808s distorsionados.</p>
         </article>
-        <article class="tarjeta" tabindex="0">
+        <article class="tarjeta" tabindex="0" data-aos="zoom-in" data-aos-delay="300">
           <span class="etiqueta-destaque">Calle y Autenticidad</span>
           <h3 class="titulo-tarjeta">Fanta Rosario</h3>
           <p class="texto-cuerpo">Una propuesta vocal contundente y directa. Sus barras retratan la realidad sin filtros, destacando por su energía imparable en cada verso.</p>
@@ -65,7 +67,14 @@
     <p class="texto-copyright">&copy; 2026 TrapZone Web. Todos los derechos reservados.</p>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script y ejecución de AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>
