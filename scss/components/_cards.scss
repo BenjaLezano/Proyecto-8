@@ -3,8 +3,16 @@
 
 .contenedor-tarjetas-flex {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr; 
   gap: 1.5rem;
+
+  @include responder-a(tablet) {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  @include responder-a(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .tarjeta {
@@ -15,8 +23,8 @@
   @include transition-smooth;
 
   &:hover {
-    transform: translateY(-5px);
-    border-color: rgba($color-primary, 0.5);
+    transform: translateY(-6px);
+    border-color: rgba($color-primary, 0.6);
   }
 
   .titulo-tarjeta {
@@ -38,7 +46,11 @@
   margin-bottom: 3rem;
 
   .carousel-item img {
-    height: 400px;
+    height: 300px;
     object-fit: cover;
+
+    @include responder-a(tablet) {
+      height: 400px;
+    }
   }
 }
